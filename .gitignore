@@ -1,0 +1,4 @@
+build/
+.vscode/
+ProcessingCPP
+libProcessingCPP.a
