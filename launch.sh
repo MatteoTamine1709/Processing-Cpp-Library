@@ -16,7 +16,7 @@ then
     rm -rf build
 elif [ $option == "2" ]
 then
-    mkdir -p build
+    mkdir build
     cd build
         cmake .. -G "Unix Makefiles"
         cmake -build .

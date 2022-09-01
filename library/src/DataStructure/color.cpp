@@ -9,17 +9,17 @@ color_s::color_s() {
 }
 
 color_s::color_s(double v) {
-  r = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].r, 0, 255);
-  g = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].g, 0, 255);
-  b = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].b, 0, 255);
+  this->r = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].r, 0, 255);
+  this->g = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].g, 0, 255);
+  this->b = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].b, 0, 255);
   this->a = 255;
 }
 
 color_s::color_s(double v, double a) {
-  r = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].r, 0, 255);
-  g = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].g, 0, 255);
-  b = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].b, 0, 255);
-  a = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].a, 0, 255);
+  this->r = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].r, 0, 255);
+  this->g = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].g, 0, 255);
+  this->b = Engine::_map(v, 0, Engine::m_colorsMax[Engine::m_colorMode].b, 0, 255);
+  this->a = Engine::_map(a, 0, Engine::m_colorsMax[Engine::m_colorMode].a, 0, 255);
 }
 
 color_s::color_s(double r, double g, double b) {

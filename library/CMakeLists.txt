@@ -9,6 +9,7 @@ add_library(ProcessingCppLib STATIC
             src/engine.cpp
             #DATASTRUCTURE
             src/DataStructure/color.cpp
+            src/DataStructure/font.cpp
             # STRUCTURE
             src/Structure/exit.cpp
             # COLOR
@@ -74,6 +75,11 @@ add_library(ProcessingCppLib STATIC
             src/Shape/Attributes/strokeWeight.cpp
             src/Shape/Attributes/rectMode.cpp
             src/Shape/Attributes/ellipseMode.cpp
+            # Typography
+            src/Typography/text.cpp
+            src/Typography/loadFont.cpp
+            src/Typography/textFont.cpp
+            src/Typography/textSize.cpp
           )
 
 set_target_properties(ProcessingCppLib PROPERTIES CMAKE_INCLUDE_CURRENT_DIR TRUE)

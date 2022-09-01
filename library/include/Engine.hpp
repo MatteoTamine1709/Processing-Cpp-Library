@@ -8,6 +8,9 @@
 #include "DataStructure/Color.hpp"
 #include "DataStructure/PVector.hpp"
 #include "DataStructure/MouseEvent.hpp"
+#include "DataStructure/Font.hpp"
+#include "DataStructure/Text.hpp"
+#include "DataStructure/LinkedList.hpp"
 
 void preload();
 void setup();
@@ -54,6 +57,10 @@ class Engine {
 
     static int m_colorMode;
     static std::unordered_map<int, color> m_colorsMax;
+
+    static std::string m_defaultFontFilename;
+    static font m_textFont;
+    static double m_textSize;
 
 
     template <class Shape>
@@ -199,6 +206,18 @@ class Engine {
     static void _strokeWeight(const double &weight);
     static void _rectMode(const int &mode);
     static void _ellipseMode(const int &mode);
+
+    /* Typography */
+    static font _loadFont(const std::string &filename);
+    static void _textFont(const font &f);
+    static void _textFont(const font &f, const double &size);
+    static void _text(const char &c, const double &x, const double &y);
+    static void _text(const char &c, const double &x, const double &y, const double &z);
+    static void _text(const std::string &text, const int &start, const int &stop, const double &x, const double &y);
+    static void _text(const std::string &text, const double &x, const double &y);
+    static void _text(const std::string &text, const double &x, const double &y, const double &w, const double &h);
+    static void _text(const double &num, const double &x, const double &y);
+    static void _textSize(const double &size);
 
 };
 

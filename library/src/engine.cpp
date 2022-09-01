@@ -19,6 +19,10 @@ int Engine::m_pmouseY;
 int Engine::m_rectMode = CORNER;
 int Engine::m_ellipseMode = CENTER;
 
+std::string Engine::m_defaultFontFilename = "./library/ressources/fonts/arial.ttf";
+font Engine::m_textFont;
+double Engine::m_textSize = 24.0f;
+
 color Engine::HsvToRgb(color hsv) {
   hsv.g /= 100.f;
   hsv.b /= 100.f;
@@ -80,6 +84,7 @@ void Engine::_preload() {
 
   m_fillColor = color(255);
   m_strokeColor = color(0);
+
   preload();
 }
 
@@ -409,4 +414,41 @@ void rectMode(const int &mode) {
 
 void ellipseMode(const int &mode) {
   Engine::_ellipseMode(mode);
+}
+
+/* Typography */
+font loadFont(const std::string &filename) {
+  return Engine::_loadFont(filename);
+}
+
+void textFont(const font &f) {
+  Engine::_textFont(f);
+}
+
+void textFont(const font &f, const double &size) {
+  Engine::_textFont(f, size);
+}
+
+void text(const char &c, const double &x, const double &y) {
+  Engine::_text(c, x, y);
+}
+
+void text(const std::string &text, const int &start, const int &stop, const double &x, const double &y) {
+  Engine::_text(text, start, stop, x, y);
+}
+
+void text(const std::string &text, const double &x, const double &y) {
+  Engine::_text(text, x, y);
+}
+
+void text(const std::string &text, const double &x, const double &y, const double &w, const double &h) {
+  Engine::_text(text, x, y, w, h);
+}
+
+void text(const double &num, const double &x, const double &y) {
+  Engine::_text(num, x, y);
+}
+
+void textSize(const double &size) {
+  Engine::_textSize(size);
 }

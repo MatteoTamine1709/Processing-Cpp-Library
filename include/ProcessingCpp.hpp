@@ -9,6 +9,7 @@
 #include "DataStructure/Color.hpp"
 #include "DataStructure/PVector.hpp"
 #include "DataStructure/MouseEvent.hpp"
+#include "DataStructure/Font.hpp"
 
 #define PI M_PI
 #define HALF_PI (M_PI / 2)
@@ -190,5 +191,16 @@ void strokeWeight(const double &w);
 void rectMode(const int &mode);
 
 void ellipseMode(const int &mode);
+
+/* Typography */
+font loadFont(const std::string &filename);
+void textFont(const font &f);
+void textFont(const font &f, const double &size);
+void text(const char &c, const double &x, const double &y);
+void text(const std::string &text, const int &start, const int &stop, const double &x, const double &y);
+void text(const std::string &text, const double &x, const double &y);
+void text(const std::string &text, const double &x, const double &y, const double &w, const double &h);
+void text(const double &num, const double &x, const double &y);
+void textSize(const double &size);
 
 #endif
